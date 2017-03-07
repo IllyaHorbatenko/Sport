@@ -1,0 +1,65 @@
+@import "bourbon"
+
+//main_color: #17a9d8
+//main_txt_color: #262626
+//main_bg_color: #fff
+//auxiliary_txt_color: #443133
+//font_RobotoRegular: "RobotoRegular", Arial, sans-serif
+//font_ROBOTO_BLACK: "ROBOTO-BLACK", Arial, sans-serif
+//font_ROBOTO_THIN: "ROBOTO-THIN", Arial, sans-serif
+//font_MyriadPro_Regular: "MyriadPro-Regular", Arial, sans-serif
+//font_MyriadPro_Bold: "MyriadPro-Bold", Arial, sans-serif
+
+$main_color: #ff3333
+$auxiliary_txt_color: #443133
+$main_txt_color: #000
+$main_txt_color2: #2c3e50
+$main_bg_color: #f4f8f9
+
+
+$font_RobotoRegular: "RobotoRegular", Arial, sans-serif
+$font_ROBOTO_BLACK: "ROBOTO-BLACK", Arial, sans-serif
+$font_ROBOTO_THIN: "ROBOTO-THIN", Arial, sans-serif
+$font_MyriadPro_Regular: "MyriadPro-Regular", Arial, sans-serif
+$font_MyriadPro_Bold: "MyriadPro-Bold", Arial, sans-serif
+
+
+@mixin font($color, $fz, $ff, $lh: 1.6)
+	color: $color
+	font: $fz $ff
+	line-height: $lh
+
+
+%main_btn
+	width: 270px
+	height: 52px
+	background-color: $main_color
+	border: 2px solid transparent
+	transition: .2s
+	border-radius: 10px
+	padding: 0
+	@include font(#fff, 18px, $font_MyriadPro_Bold)
+
+%main_btn_hover
+	background: transparent
+	color: $main_color
+	border: 2px solid
+%main_btn_active
+	background-color: #FD2233
+%main_btn_focus
+	background-color: #FD2233
+	outline: 0	
+
+
+
+%flex 
+	display: flex
+	align-items: center
+	justify-content: center
+
+	
+			
+
+
+
+

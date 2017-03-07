@@ -1,0 +1,196 @@
+@import "bourbon"
+@import "vars.sass"
+@import "sprite/sprite.sass"
+
+// loads Libs SASS
+@import "app/libs/animate/animate.sass"
+@import "app/libs/owl.carousel/assets/owl.carousel.sass"
+@import "../app/libs/FontAwesome/font-awesome.min"
+@import "../app/libs/slidebars/slidebars.min"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+.button
+	@extend %main_btn
+	&:hover
+		@extend %main_btn_hover
+
+// Секция our_advantages
+.our_advantages
+	background-color: $main_bg_color
+	padding: 70px 0
+	h2
+		color: $main_txt_color2
+		text-align: center
+		margin: 0 0 49px
+		font: 27px $font_ROBOTO_BLACK
+		line-height: 1.3
+	.our_advantages_item
+		color: $main_txt_color2
+		h3
+			margin: 0 0 19px
+			font: 16px $font_ROBOTO_BLACK
+			text-align: center
+		p
+			margin-top: 15px
+			font-size: 17px
+			line-height: 1.6
+			text-align: center
+		.our_advantages_item_img
+			text-align: center
+			margin-bottom: 19px
+
+.goods-section
+	padding: 64px 0
+	.title-wrap
+		float: left
+		margin-left: 11px
+	h2
+		font-size: 27px
+		margin: 0
+	.tabs-items-wrap
+		float: right
+		.tabs-item
+			transition: .2s
+			color: $main_txt_color2
+			&:hover
+				color: $main_color
+				text-decoration: none
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+			&.active
+				a
+					color: $main_color
+	.tabs-container
+		.tabs-wrap
+			display: none
+			&.active
+				display: block
+
+// Пример checkbox
+.check	
+	cursor: pointer
+	position: relative	
+	display: inline-block
+	width: 100%
+	height: 25px
+	z-index: 10
+	.checkbox
+		display: block
+		font-size: 21px
+		top: 0
+		border-radius: 4px
+		position: absolute
+		width: 100%
+		color: $main_color
+		height: 100%
+		z-index: 0
+		.fa
+			position: absolute
+			top: 3px
+			left: 0
+		.fa-2
+			display: none
+	.txt
+		position: absolute
+		top: 0
+		padding-left: 20px
+		z-index: 0
+	input[type=checkbox]
+		cursor: pointer
+		position: relative
+		z-index: 1
+		opacity: 0
+		width: 100%
+		height: 100%
+		&:checked + .checkbox
+			border: none
+			.fa-1
+				display: none
+			.fa-2
+				display: block
+// Секция 
+.intermediate
+	text-align: center
+	min-height: 300px
+	background-color: #00b6f4
+	.intermediate_title
+		max-width: 650px
+		margin: auto		
+		color: #052243
+		h3
+			margin: 30px 30px
+			text-transform: uppercase
+			font-size: 24px
+			color: #052243
+			
+			
+
+	.intermediate_wrap
+		margin-top: 40px
+		form
+		.intermediate_item
+			display: inline-block
+			input
+				width: 100%
+				display: inline-block	
+				border: 1px solid #a2b6c9
+				background: #fff
+				color: #43637f
+				height: 40px
+				margin: 0 10px
+				padding: 0 0 0 9px
+				&::-webkit-input-placeholder
+					color: #43637f
+				&:-moz-placeholder
+					color: #43637f
+				&::-moz-placeholder
+					color: #43637f
+				&:-ms-input-placeholder
+					color: #43637f
+			input[type=submit]
+				background: #052243
+				color: #fff
+	
+//	Секция 
+//	Секция
+//	Секция
+//	Секция 
+//	Секция 
+//	Секция
+//	Секция
+
+
+// Секия footer 
+.footer
+	background-color: #333
+	height: 200px
+	flex: 0 0 auto	
+
+
+//ALWAYS END
+@import "media"
+

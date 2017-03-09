@@ -59,7 +59,7 @@ gulp.task('libs', function() {
 		'app/libs/animate/animate-css.js',
 		'app/libs/slidebars/slidebars.min.js',
 		'app/libs/mobile-detect/mobile-detect.min.js',
-		//'app/libs/owl.carousel/owl.carousel.min.js',
+		'app/libs/owl.carousel/owl.carousel.min.js',
 		// 'app/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js',
 		// 'app/libs/owl.carousel/jquery.mousewheel.min.js',
 		'app/libs/matchMedia/matchMedia.js',

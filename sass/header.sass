@@ -132,13 +132,66 @@ p
 	max-width: 50em
 	display: inline-block
 	padding: 50px 46px 50px 46px
-	border: 3px solid $main_color	
 	text-align: center
 	position: relative	
 	animation: fade .8s
 	background-color: #fff
-	border-radius: 20px
+	border-radius: 10px
 	z-index: 1002
+	&.table-size
+		width: 1200px
+		max-width: 1200px
+		color: $main_txt_color2
+		min-height: 925px
+		.title-wrap
+			margin-bottom: 45px
+			h3
+				font: 42px $font_ROBOTO_BLACK
+				margin: 0 0 20px 0
+			p
+				font-size: 20px
+				line-height: 2.1
+		.content-size
+			.head
+				padding: 10px 35px
+				border: 1px solid #a7a8ac
+				border-bottom: 0
+				.title
+					float: left
+					font-size: 20px
+				.tabs-items-wrap
+					float: right
+					a
+						display: inline-block
+						color: $main_txt_color2
+						transition: .2s
+						font-size: 20px
+						&:hover
+							text-decoration: none
+							color: $main_color
+						&:active
+							text-decoration: none
+						&:focus
+							text-decoration: none
+						&.left
+							margin-right: 35px
+						&.active
+							color: $main_color
+							font-weight: 900
+			.size-table
+				.tabs-wrap
+					display: none
+					&.active
+						display: block
+				table
+					width: 100%
+					tr
+						td
+							padding: 10px 0
+							border: 1px solid #a7a8ac
+					thead
+						font-weight: 900
+
 	.modal_form_input_wrap
 		position: relative
 		display: block
@@ -398,21 +451,125 @@ p
 .header-modal-wrap
 	float: right
 	margin-right: 19px
+	padding-top: 3px
 	.button
 		width: 206px
 		font-weight: 900
 		font-size: 19px
 .header_modal
 	display: inline-block
+	position: relative
 	a
 		margin-right: 37px
-		padding: 17px 0
+		padding: 17px  0
 		@include font($main_txt_color, 18px, $font_RobotoRegular)
 		border-radius: 10px
 		text-decoration: none
 		transition: .2s
 		&:hover
 			color: $main_color
+	.delivery-container
+		display: none
+		opacity: 0
+		padding-top: 50px
+		left: -150px
+		top: 35px
+		position: absolute
+	.delivery
+		background: #fff
+		color: $main_txt_color2
+		top: 80px
+		width: 700px
+		border-radius: 12px
+		transition: .3s
+		padding: 30px 20px 30px 30px
+		.top-row
+			margin-bottom: 25px
+		&:before
+			content: ''
+			display: inline-block
+			width: 0px
+			height: 0px
+			border: 15px transparent
+			color: #fff
+			border-bottom: 15px solid
+			border-right: 15px solid transparent
+			border-left: 15px solid transparent
+			position: absolute
+			top: 35px
+			left: 172px
+		.img-wrap
+			display: inline-block
+			vertical-align: middle
+			width: 145px
+
+			img
+				width: 100%
+		.title
+			margin-left: 15px
+			display: inline-block
+			vertical-align: middle
+			font-weight: 900
+			font-size: 18px
+		.list
+			margin: 0px
+			padding: 0
+			li
+				padding-left: 35px
+				list-style-type: none
+				position: relative
+				margin-bottom: 25px
+				&:last-child
+					margin-bottom: 0
+				&:before
+					content: ""
+					width: 10px
+					display: inline-block
+					height: 10px
+					position: absolute
+					left: 0px
+					top: calc(50% - 5px)
+					border-radius: 50%
+					background: $main_txt_color2
+	.delivery-container
+		&.guarantees
+			left: -756px
+			.delivery
+				width: 1170px
+				padding: 50px 85px
+				&:before
+					left: 825px
+				.item
+					width: 49%
+					display: inline-block
+					vertical-align: top
+					font-size: 0
+					padding-right: 35px
+					h3
+						font-size: 30px
+						font-weight: 900
+						margin: 0
+						margin-bottom: 25px
+					.text
+						margin-bottom: 25px
+						b
+							font-size: 20px
+							margin-bottom: 20px
+						p
+							font-size: 16px
+						&:last-child
+							margin-bottom: 0
+
+	&.delivery-link
+		&:hover
+			.delivery-container
+				display: block
+				opacity: 1
+	&.guarantees-link
+		&:hover
+			.delivery-container
+				display: block
+				opacity: 1
 .header_wrap
 	margin: auto
 	position: absolute
@@ -474,6 +631,7 @@ label
 	max-width: 100%
 	margin-bottom: 5px
 	font-weight: 700
+
 
 // Секция 
 // Секция 

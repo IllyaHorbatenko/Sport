@@ -16,9 +16,20 @@ $arrow-offset-y: 0px
 $arrow-width: 94px
 $arrow-height: 29px
 $arrow-total-width: 94px
-$arrow-total-height: 48px
+$arrow-total-height: 74px
 $arrow-image: '../img/sprite.png'
-$arrow: (0px, 0px, 0px, 0px, 94px, 29px, 94px, 48px, '../img/sprite.png', 'arrow', )
+$arrow: (0px, 0px, 0px, 0px, 94px, 29px, 94px, 74px, '../img/sprite.png', 'arrow', )
+$arrow-mouseover-name: 'arrow_mouseover'
+$arrow-mouseover-x: 0px
+$arrow-mouseover-y: 48px
+$arrow-mouseover-offset-x: 0px
+$arrow-mouseover-offset-y: -48px
+$arrow-mouseover-width: 11px
+$arrow-mouseover-height: 26px
+$arrow-mouseover-total-width: 94px
+$arrow-mouseover-total-height: 74px
+$arrow-mouseover-image: '../img/sprite.png'
+$arrow-mouseover: (0px, 48px, 0px, -48px, 11px, 26px, 94px, 74px, '../img/sprite.png', 'arrow_mouseover', )
 $header-mail-name: 'header_mail'
 $header-mail-x: 0px
 $header-mail-y: 29px
@@ -27,14 +38,14 @@ $header-mail-offset-y: -29px
 $header-mail-width: 17px
 $header-mail-height: 19px
 $header-mail-total-width: 94px
-$header-mail-total-height: 48px
+$header-mail-total-height: 74px
 $header-mail-image: '../img/sprite.png'
-$header-mail: (0px, 29px, 0px, -29px, 17px, 19px, 94px, 48px, '../img/sprite.png', 'header_mail', )
+$header-mail: (0px, 29px, 0px, -29px, 17px, 19px, 94px, 74px, '../img/sprite.png', 'header_mail', )
 $spritesheet-width: 94px
-$spritesheet-height: 48px
+$spritesheet-height: 74px
 $spritesheet-image: '../img/sprite.png'
-$spritesheet-sprites: ($arrow, $header-mail, )
-$spritesheet: (94px, 48px, '../img/sprite.png', $spritesheet-sprites, )
+$spritesheet-sprites: ($arrow, $arrow-mouseover, $header-mail, )
+$spritesheet: (94px, 74px, '../img/sprite.png', $spritesheet-sprites, )
 
 // The provided mixins are intended to be used with the array-like variables
 //

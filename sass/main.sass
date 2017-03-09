@@ -34,7 +34,17 @@ body textarea:required:valid
 .button
 	@extend %main_btn
 	&:hover
+		text-decoration: none
 		@extend %main_btn_hover
+	&:active
+		text-decoration: none
+		outline: none
+	&:focus
+		outline: none
+		text-decoration: none
+
+
+
 
 // Секция our_advantages
 .our_advantages
@@ -62,7 +72,9 @@ body textarea:required:valid
 			margin-bottom: 19px
 
 .goods-section
-	padding: 64px 0
+	padding: 64px 0 81px
+	.top-row
+		margin-bottom: 25px
 	.title-wrap
 		float: left
 		margin-left: 11px
@@ -71,9 +83,12 @@ body textarea:required:valid
 		margin: 0
 	.tabs-items-wrap
 		float: right
+		margin-top: 8px
+		padding-right: 20px
 		.tabs-item
 			transition: .2s
 			color: $main_txt_color2
+			font-size: 20px
 			&:hover
 				color: $main_color
 				text-decoration: none
@@ -81,15 +96,63 @@ body textarea:required:valid
 				text-decoration: none
 			&:focus
 				text-decoration: none
+			&.left
+				margin-right: 59px
 			&.active
-				a
-					color: $main_color
+				font-weight: 900
+				color: $main_color
 	.tabs-container
 		.tabs-wrap
 			display: none
+			text-align: center
 			&.active
 				display: block
+			.item
+				box-shadow: 0 0 7px 4px #e5e7e9
+				transition: .3s
+				&:hover
+					transform: scale(1.01)
+					box-shadow: 0 0 15px 6px #e5e7e9
+			.goods-image
+				width: 100%
+				margin-bottom: 27px
+			.about
+				padding: 0 10px
+				color: $main_txt_color2
+				font-size: 20px
+			.price
+				padding: 0 10px
+				font-weight: 900
+				margin-bottom: 27px
+				.delete
+					text-decoration: line-through
+					font-size: 22px
+					margin-right: 33px
+				.now
+					font-size: 28px
+					color: $main_color
+			.button
+				margin-bottom: 40px
+				font-size: 20px
 
+.advertising-container
+	position: relative
+	background: url("../img/advertising-bg.jpg") no-repeat 50% 50%
+	background-size: cover
+	text-align: center
+	min-height: 243px
+	z-index: 0
+	h3
+		color: #fff
+		margin: 0
+		font: 42px $font_RobotoRegular
+		font-weight: 900
+		padding-top: 61px
+	.decore-img
+		position: absolute
+		left: 0px
+		top: 0px
+		z-index: -1
 // Пример checkbox
 .check	
 	cursor: pointer
@@ -132,49 +195,213 @@ body textarea:required:valid
 				display: none
 			.fa-2
 				display: block
+.comments-section
+	background: $main_bg_color
+	color: $main_txt_color2
+	padding: 56px 0 79px
+	.title-wrap
+		text-align: center
+		font: 28px $font_ROBOTO_BLACK
+		margin-bottom: 47px
+		h2
+			margin: 0px
+	.owl-carousel
+		margin: auto
+		width: 1030px
+		padding: 0 28px
+		.owl-item
+			.avatar-wrap
+				margin-right: 40px
+				width: 160px
+				img
+					border-radius: 50%
+					width: 100%
+			.text
+				display: table-cell
+				vertical-align: middle
+				padding-right: 90px
+				.comment
+					font-size: 16px
+					margin-bottom: 18px
+				.where
+					font-size: 16px
+					font-weight: 900
+			.item
+				display: table
+	.owl-carusel-wrap
+		position: relative
+		display: inline-block
+		width: 100%
+	.customNextBtn,
+	.customPrevBtn
+		position: absolute
+		cursor: pointer
+		padding: 15px
+		top: calc(50% - 27px)
+		opacity: .5
+		transition: .2s
+		&:before
+			content: ''
+			display: inline-block
+			@include sprite($arrow_mouseover)
+		&:hover
+			opacity: 1
+	.customPrevBtn
+		left: 30px
+		&:before
+			transform: rotate(-180deg)
+	.customNextBtn
+		right: 30px
+
+
+.questions-section
+	padding: 59px 0
+	color: $main_txt_color2
+	.title-wrap
+		text-align: center
+		margin-bottom: 44px
+		font: 28px $font_ROBOTO_BLACK
+		h2
+			margin: 0
+	.accordion
+		margin-bottom: 20px
+		cursor: pointer
+		.accordion_title
+			position: relative
+			padding-left: 56px
+			font-size: 19px
+			&:before
+				content: ''
+				position: absolute
+				left: 12px
+				top: calc(50% - 7px)
+				display: inline-block
+				width: 12px
+				height: 12px
+				color: $main_color
+				border-top: 3px solid
+				border-right: 3px solid
+				transform: rotate(45deg)
+				transition: .3s
+			&.active
+				&:before
+					top: calc(50% - 9px)
+					left: 16px
+					transform: rotate(134deg)
+		.accordion_content
+			padding-left: 74px
+			margin-top: 30px
+			max-width: 1090px
+			display: none
+
+
+
 // Секция 
 .intermediate
 	text-align: center
-	min-height: 300px
-	background-color: #00b6f4
+	padding: 59px 0 78px
+	background: url("../img/inetrmediate-bg.jpg") no-repeat 50% 50%
+	background-size: cover
 	.intermediate_title
-		max-width: 650px
-		margin: auto		
-		color: #052243
+		font: 28px $font_RobotoRegular
+		margin-bottom: 49px
+		line-height: 1.4
 		h3
-			margin: 30px 30px
-			text-transform: uppercase
-			font-size: 24px
-			color: #052243
-			
-			
-
+			margin: 0
+			font-size: 42px
+			color: #fff
 	.intermediate_wrap
-		margin-top: 40px
+		text-align: center
 		form
-		.intermediate_item
-			display: inline-block
-			input
-				width: 100%
-				display: inline-block	
-				border: 1px solid #a2b6c9
-				background: #fff
-				color: #43637f
-				height: 40px
-				margin: 0 10px
-				padding: 0 0 0 9px
-				&::-webkit-input-placeholder
+			.intermediate_item
+				display: inline-block
+				width: 270px
+				margin: 0 15px
+				input
+					width: 100%
+					height: 52px
+					display: inline-block
+					background: #fff
 					color: #43637f
-				&:-moz-placeholder
-					color: #43637f
-				&::-moz-placeholder
-					color: #43637f
-				&:-ms-input-placeholder
-					color: #43637f
+					padding: 0 0 0 17px
+					border-radius: 10px
+					font-size: 21px
+					&::-webkit-input-placeholder
+						color: #43637f
+					&:-moz-placeholder
+						color: #43637f
+					&::-moz-placeholder
+						color: #43637f
+					&:-ms-input-placeholder
+						color: #43637f
 			input[type=submit]
-				background: #052243
-				color: #fff
-	
+				margin: 0 15px
+				font-size: 21px
+				@extend %main_btn
+				&:hover
+					@extend %main_btn_hover
+
+.contacts-section
+	padding: 60px 0 40px
+	background: #fff
+	text-align: center
+	color: $main_txt_color2
+	.title-wrap
+		margin-bottom: 39px
+		font: 28px $font_RobotoRegular
+		color: $main_txt_color2
+		h2
+			margin: 0
+	.contact-item
+		text-align: left
+		ul
+			margin: 0px
+			padding: 0px
+			li
+				list-style-type: none
+		&.address,
+		&.phone,
+		&.email
+			.icon
+				margin-top: 7px
+				vertical-align: top
+				width: 80px
+				height: 80px
+				display: inline-block
+		&.address
+			.icon
+				background: url("../img/icn_Location.png") no-repeat 50% 50%
+		&.phone
+			.icon
+				background: url("../img/icn_Phone.png") no-repeat 50% 50%
+			.text-wrap
+				p
+					margin-bottom: 12px
+		&.email
+			.icon
+				background: url("../img/icn_Email.png") no-repeat 50% 50%
+		.text-wrap
+			vertical-align: top
+			display: inline-block
+			margin-left: 27px
+			p
+				font-size: 16px
+				margin-bottom: 16px
+				font-weight: 900
+			a
+				color: inherit
+				&:hover
+					text-decoration: none
+					color: inherit
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+			.title
+				font-weight: 900
+				font-size: 20px
+
+
 //	Секция 
 //	Секция
 //	Секция
@@ -186,10 +413,14 @@ body textarea:required:valid
 
 // Секия footer 
 .footer
-	background-color: #333
-	height: 200px
+	background-color: #fff
 	flex: 0 0 auto	
-
+	.maps-container
+		#map
+			width: 100%
+			height: 240px
+	.foter-menu
+		padding: 20px 0
 
 //ALWAYS END
 @import "media"

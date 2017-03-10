@@ -63,7 +63,8 @@ gulp.task('libs', function() {
 		// 'app/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js',
 		// 'app/libs/owl.carousel/jquery.mousewheel.min.js',
 		'app/libs/matchMedia/matchMedia.js',
-		'app/libs/matchMedia/matchMedia.addListener.js'
+		'app/libs/matchMedia/matchMedia.addListener.js',
+		'app/libs/slick/slick.min.js'
 		])
 		.pipe(concat('libs.js'))
 		// .pipe(uglify()) //Minify libs.js
@@ -74,7 +75,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		"js/common.js",
 		'js/animate.js',
-		'js/functions.js',
+		'js/functions.js'
 		])
 		.pipe(babel({
             presets: ['es2015']

@@ -2,6 +2,8 @@
 @import "vars.sass"
 @import "fonts.sass"
 @import "sprite/sprite.sass"
+@import "app/libs/slick/slick"
+@import "app/libs/slick/slick-theme"
 // @import "app/libs/jquery/jquery-ui.min"  //Если мы хотим подключить стили для  jquery-ui (например для рабочих tooltips)
 
 html, body
@@ -17,6 +19,7 @@ body
 	overflow-x: hidden
 	color: $main_txt_color
 	-webkit-tap-highlight-color: transparent
+	background: #fff
 	//внешний вид скроллбара 
 	scrollbar-base-color: $main_color   //для IE 
 	scrollbar-arrow-color: $main_color	//для IE
@@ -97,6 +100,175 @@ p
 	display: none
 	overflow: auto	
 	z-index: 1000
+	&.modal-slider
+		display: block
+		z-index: -1
+		opacity: 0
+		.dm-modal
+			padding: 50px 30px 60px
+			width: 1065px
+			max-width: 1065px
+			text-align: left
+			.content-about
+				width: 500px
+				display: inline-block
+				vertical-align: top
+				color: $main_txt_color2
+				.goods-title
+					font: 32px $font_ROBOTO_BLACK
+					margin: 0 0 50px
+				.description
+					margin-bottom: 75px
+					.name-value
+						padding: 23px
+						border-top: 1px solid #efefef
+						&.last
+							border-bottom: 1px solid #efefef
+					.name
+						float: left
+						font: 20px $font_ROBOTO_BLACK
+					.value
+						float: right
+						font: 20px $font_RobotoRegular
+						.select
+							width: 70px
+							.slct
+								height: auto
+								text-align: right
+								font: 20px $font_RobotoRegular
+								background: transparent
+								color: $main_txt_color2
+								box-shadow: none
+								padding: 0 32px 0 0
+								margin: 0
+							.slct_arrow
+								top: 0px
+							.drop
+								background: #fff
+								top: 37px
+								li
+									color: inherit
+					.price
+						padding: 30px 0
+						font-size: 36px
+						.old
+							font-family: $font_ROBOTO_BLACK
+							color: $main_txt_color2
+							text-decoration: line-through
+							float: left
+						.now
+							font-family: $font_RobotoRegular
+							color: $main_color
+							float: right
+				form
+					text-align: center
+					.modal_form_input_wrap
+						width: 390px
+						margin: auto
+					input
+						margin-bottom: 20px
+						width: 100%
+						height: 52px
+						display: inline-block
+						background: #fff
+						color: #000
+						padding: 0 0 0 17px
+						border-radius: 10px
+						font-size: 21px
+						border: 1px solid #d8d8d8
+						box-shadow: none
+						&::-webkit-input-placeholder
+							color: #000
+						&:-moz-placeholder
+							color: #000
+						&::-moz-placeholder
+							color: #000
+						&:-ms-input-placeholder
+							color: #000
+					input[type=submit]
+						margin: 0 15px
+						width: 390px
+						font-size: 21px
+						@extend %main_btn
+						&:hover
+							@extend %main_btn_hover
+			.slick-slider-container
+				width: 470px
+				margin-right: 30px
+				display: inline-block
+				vertical-align: top
+				.slider-nav
+					margin: 0 -10px
+					.item
+						img
+							margin: auto
+							border: 2px solid transparent
+							border-radius: 12px
+							transition: .3s
+						&:focus
+							outline: none !important
+						&.slick-current
+							img
+								border: 2px solid $main_color
+				.slider-for
+					margin-bottom: 25px
+			.slick-next,
+			.slick-prev
+				border-radius: 50%
+				height: 50px
+				width: 50px
+				background: #000000
+				opacity: 0.75
+				z-index: 10
+				transition: .2s
+				&:before
+					content: ''
+					display: inline-block
+					width: 14px
+					height: 14px
+					background: transparent
+
+				&:hover
+					opacity: 1
+					background: $main_color
+			.slick-next
+				right: 20px
+				&:before
+					margin-right: 4px
+					border-top: 2px solid #ffffff
+					border-right: 2px solid #ffffff
+					transform: rotate(45deg)
+			.slick-prev
+				left: 20px
+				&:before
+					margin-left: 4px
+					border-top: 2px solid #ffffff
+					border-left: 2px solid #ffffff
+					transform: rotate(-45deg)
+			.slick-dots
+				padding: 0px
+				margin: 0px
+				bottom: -35px
+				text-align: center
+				li
+					display: inline-block
+					button
+						&:before
+							content: ''
+							opacity: 1
+							width: 10px
+							height: 10px
+							border-radius: 50%
+							background: #e0e0e0
+					&.slick-active
+						button
+							&:before
+								content: ''
+								background: $main_color
+		&.active
+			display: none
+			z-index: 1000
+			opacity: 1
 	&.pop3
 		.dm-modal
 			width: inherit
@@ -110,6 +282,7 @@ p
 				a
 					font-size: 30px
 					color: #fff
+
 .dm-table
 	display: table
 	width: 100%
@@ -612,7 +785,20 @@ p
 				font-size: 16px
 				color: #fff
 	.button
+		display: inline-block
+		height: auto
+		padding: 8px 0
 		font-size: 20px
+		&:hover
+			text-decoration: none
+			color: $main_color
+		&:active
+			text-decoration: none
+			color: #fff
+		&:focus
+			color: #fff
+			text-decoration: none
+
 
 .header_bot_txt
 	margin: auto

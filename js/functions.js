@@ -39,59 +39,7 @@ if ('addEventListener' in document) {
         FastClick.attach(document.body);
     }, false);
 }
-// Initialize Slidebars
-(function($) {
-    // Initialize Slidebars
-    var controller = new slidebars();
-    controller.init();
 
-    // Toggle Slidebars
-    $('#nav-button-label').on('click', function(event) {
-        // Stop default action and bubbling
-        event.stopPropagation();
-        event.preventDefault();
-        // Toggle the Slidebar with id 'id-1'
-        controller.toggle('id-1');
-        $("html,body").toggleClass("slidebars");
-    });
-
-    // Close Slidebar links
-    $('[off-canvas] a').on('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        var url = $(this).attr('href'),
-            target = $(this).attr('target') ? $(this).attr('target') : '_self';
-
-        $("#nav-button-label").removeClass("nav-on");
-        $("#nav-button-label .nav-line").removeClass("active");
-        $("html,body").removeClass("slidebars");
-        controller.close(function() {
-            window.open(url, target);
-        });
-    });
-
-    // Add close class to canvas container when Slidebar is opened
-    $(controller.events).on('opening', function(event) {
-        $('[canvas]').addClass('js-close-any');
-    });
-    // Add close class to canvas container when Slidebar is opened
-    $(controller.events).on('closing', function(event) {
-        $('[canvas]').removeClass('js-close-any');
-    });
-    // Close any
-    $(document).on('click', '.js-close-any', function(event) {
-        if (controller.getActiveSlidebar()) {
-            event.preventDefault();
-            event.stopPropagation();
-            $("#nav-button-label").removeClass("nav-on");
-            $("#nav-button-label .nav-line").removeClass("active");
-            $("html,body").removeClass("slidebars");
-            controller.close();
-
-        }
-    });
-})($);
 
 $(document).ready(function() {
 
@@ -153,15 +101,22 @@ $(document).ready(function() {
         /* Предотвращаем обычное поведение ссылки при клике */
         return false;
     });
+    // $('.slick-prev .slick-arrow').click(function () {
+    //     $('.slick-prev .slick-arrow').trigger('click');
+    // })
+	//
+
     // Открываем модальное окно  
     $(".modal").click(function(e) {
         e.preventDefault();
         var id = $(this).data('modal');
         var txt = $(this).data('info');
+
         // var title =  $(this).data('title'); // для изменения title в модалке
         $(".popup[data-modal=" + id + "]").toggle("fade", 200).find("form").css('display', 'block');
         $(".popup[data-modal=" + id + "] input[name=form_name]").val(txt);
         // $(".popup[data-modal="+id+"] h2").html(title); // прописать в ссылку data-title="нужный title"
+    
 
         if (window.matchMedia("(min-width: 992px)").matches) {
             $("body").css({ "overflow": "hidden", "padding-right": "17px" });

@@ -40,6 +40,17 @@ function tabs(parent) {
 	});
 }
 
+function anchor(parent) {
+	parent.find("a[href*='#']").on("click", function(e) {
+		e.preventDefault();
+		var anchor = $(this);
+		$('html, body').stop().animate({
+			scrollTop: $(anchor.attr('href')).offset().top - 88
+		}, 500);
+		return false;
+	});
+}
+
 $(document).ready( function() {
 	accordion();
     // checkbox
@@ -56,16 +67,30 @@ $(document).ready( function() {
     // $( document ).tooltip({
     //   track: true
     // }); 
+	anchor($('.header'));
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		speed: 500,
 
-    // скролл по ссылке с атрибутом href 
-    // $(".header_nav a[href*='#']").on("click", function(e) {
-    //     e.preventDefault();
-    //     var anchor = $(this);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $(anchor.attr('href')).offset().top
-    //     }, 500);
-    //     return false;
-    // });
+		fade: true,
+		asNavFor: '.slider-nav'
+	});
+	$('.slider-nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		speed: 500,
+		asNavFor: '.slider-for',
+		dots: true,
+		arrows: false,
+		//infinite: true,
+		// centerMode: true,
+		focusOnSelect: true,
+
+	});
+
+    //скролл по ссылке с атрибутом href
+
 
     // Скролл по классу .scroll_to и атрибуту data-scroll у кнопки к примеру (data-scroll="куда скроллим" в элементе куда скроллим ставим id потом впишем в куда скроллим)
     // $(".scroll_to").on("clcik", function(e) {

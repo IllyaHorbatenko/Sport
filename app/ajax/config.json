@@ -1,0 +1,165 @@
+[
+  {
+    "id" : "1",
+    "srcBig" : [
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg"
+    ],
+    "title" : "Спортивный костюм Boss",
+    "srcSmall" : [
+      "img/slide1.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide3.png"
+    ],
+    "color" : "серый-оранжевый",
+    "cloth" : "эластан 78%, полиэстер 22%",
+    "country" : "Словакия",
+    "size" : [
+      "M",
+      "XL"
+    ],
+    "priceOld" : "1580",
+    "priceNew" : "920"
+  },
+  {
+    "id" : "2",
+    "srcBig" : [
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg"
+    ],
+    "title" : "Спортивный костюм Boss",
+    "srcSmall" : [
+      "img/slide1.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide3.png"
+    ],
+    "color" : "серый-оранжевый",
+    "cloth" : "эластан 78%, полиэстер 22%",
+    "country" : "Словакия",
+    "size" : [
+      "M",
+      "XL"
+    ],
+    "priceOld" : "1580",
+    "priceNew" : "920"
+  },
+  {
+    "id" : "3",
+    "srcBig" : [
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg"
+    ],
+    "title" : "Спортивный костюм Boss",
+    "srcSmall" : [
+      "img/slide1.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide3.png"
+    ],
+    "color" : "серый-оранжевый",
+    "cloth" : "эластан 78%, полиэстер 22%",
+    "country" : "Словакия",
+    "size" : [
+      "M",
+      "XL"
+    ],
+    "priceOld" : "1580",
+    "priceNew" : "920"
+  },
+  {
+    "id" : "4",
+    "srcBig" : [
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg"
+    ],
+    "title" : "Спортивный костюм Boss",
+    "srcSmall" : [
+      "img/slide1.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide3.png"
+    ],
+    "color" : "серый-оранжевый",
+    "cloth" : "эластан 78%, полиэстер 22%",
+    "country" : "Словакия",
+    "size" : [
+      "M",
+      "XL"
+    ],
+    "priceOld" : "1580",
+    "priceNew" : "920"
+  },
+  {
+    "id" : "5",
+    "srcBig" : [
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg"
+    ],
+    "title" : "Спортивный костюм Boss",
+    "srcSmall" : [
+      "img/slide1.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide3.png"
+    ],
+    "color" : "серый-оранжевый",
+    "cloth" : "эластан 78%, полиэстер 22%",
+    "country" : "Словакия",
+    "size" : [
+      "M",
+      "XL"
+    ],
+    "priceOld" : "1580",
+    "priceNew" : "920"
+  },
+  {
+    "id" : "6",
+    "srcBig" : [
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg",
+      "img/photo122134.jpg"
+    ],
+    "title" : "Спортивный костюм Boss",
+    "srcSmall" : [
+      "img/slide1.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide2.png",
+      "img/slide3.png"
+    ],
+    "color" : "серый-оранжевый",
+    "cloth" : "эластан 78%, полиэстер 22%",
+    "country" : "Словакия",
+    "size" : [
+      "M",
+      "XL"
+    ],
+    "priceOld" : "1580",
+    "priceNew" : "920"
+  }
+
+]

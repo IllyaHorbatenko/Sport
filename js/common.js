@@ -1,7 +1,7 @@
-
 // подключение common.js
 
-// header_bg.jpg
+
+// header_bg.jpgss
 function accordion() {
 	$(".accordion .accordion_title").click(function () {
 		var content = $(this).next();
@@ -41,96 +41,231 @@ function tabs(parent) {
 }
 
 function anchor(parent) {
-	parent.find("a[href*='#']").on("click", function(e) {
+	parent.find("a[href*='#']").on("click", function (e) {
 		e.preventDefault();
 		var anchor = $(this);
 		$('html, body').stop().animate({
-			scrollTop: $(anchor.attr('href')).offset().top - 88
+			scrollTop: $(anchor.attr('href')).offset().top - 40
 		}, 500);
 		return false;
 	});
 }
 
-$(document).ready( function() {
+function mbMenuHandler() {
+	$('.mobile-menu-container').toggleClass('active');
+	$('.burger-container').toggleClass('active');
+	$('.main').toggleClass('active');
+	$('body').toggleClass('slidebars');
+}
+
+
+function AjaxFilter() {
+	//http://work.melfori.com/Stropy/ajax/goods.json
+	var link = "../ajax/config.json",
+		title = $('#goods-title'),
+		srcBig = $('.slider-for'), // добавлять tmp
+		srcSmall = $('.slider-nav'), // добавлять tmp
+		color = $('#color-goods'),
+		cloth = $('#cloth-goods'),
+		country = $('#country-goods'),
+		size = $('#size-goods'), // добавлять tmp
+		priceOld = $('#priceOld'),
+		priceNew = $('#priceNew');
+
+	var sizeTmpDrop = function (text) {
+		return "<li>" + text + "</li>"
+	};
+
+	var slideTmp = function (src) {
+		return "<div class='item'> <img src=" + src + "> </div>"
+	};
+
+
+	this.sliderFor = function() {
+		return {
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			speed: 500,
+			fade: true,
+			asNavFor: '.slider-nav'
+		}
+	};
+
+	this.sliderNav = function () {
+		return {
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			speed: 500,
+			asNavFor: '.slider-for',
+			dots: true,
+			arrows: false,
+			focusOnSelect: true,
+			infinite: true
+		}
+	};
+
+	this.filter = function (btn) {
+		var id = btn.attr('data-ajax');
+
+		$('.slider-for').slick('unslick');
+		$('.slider-nav').slick('unslick');
+
+		$.getJSON(link, function (data) {
+			data.map(el=> {
+				if (el.id === id) {
+					var limit = 0;
+					title.text(el.title);
+
+
+					srcBig.html('');
+					srcSmall.html('');
+
+					el.srcBig.map(el => {
+						srcBig.append(slideTmp(el));
+					});
+
+					el.srcSmall.map(el => {
+						limit++;
+						srcSmall.append(slideTmp(el));
+
+					});
+					if(limit > 3){
+						srcSmall.find('img').css('transform', "translateX(174px)");
+					}
+					//
+					color.text(el.color);
+					//
+					cloth.text(el.cloth);
+					//
+					country.text(el.country);
+					//
+					priceOld.text(el.priceOld + " грн");
+					//
+					priceNew.text(el.priceNew + " грн");
+					//
+					limit = 0;
+					size.find('.slct').text('');
+					size.find('.drop').text('');
+					el.size.map(el => {
+						limit++;
+						if(limit === 1){
+							size.find('.slct').text(el);
+						}else{
+							size.find('.drop').append(sizeTmpDrop(el));
+						}
+
+					})
+				}
+			});
+		}).complete(() => {
+			$('.slider-for').slick(this.sliderFor());
+			$('.slider-nav').slick(this.sliderNav());
+		})
+	};
+
+
+}
+var filterObj = new AjaxFilter();
+
+$(document).ready(function () {
+
 	accordion();
-    // checkbox
-    var checkTxt = $('.check .txt').width();
-    $('.check').each(function () {
-       var checkTxt = $(this).find('.txt').width();
-        $(this).css('width', checkTxt + 20);
-    });
+	// checkbox
+	var checkTxt = $('.check .txt').width();
+	$('.check').each(function () {
+		var checkTxt = $(this).find('.txt').width();
+		$(this).css('width', checkTxt + 20);
+	});
 
 
 	tabs($('.content-size'));
 	tabs($('.goods-section'));
-    // для инициализации tooltips
-    // $( document ).tooltip({
-    //   track: true
-    // }); 
+	// для инициализации tooltips
+	// $( document ).tooltip({
+	//   track: true
+	// }); 
 	anchor($('.header'));
-	$('.slider-for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		speed: 500,
+	anchor($('.header_nav'));
+	anchor($('.mobile-menu-container'));
 
-		fade: true,
-		asNavFor: '.slider-nav'
+	$('.slider-for').slick(filterObj.sliderFor());
+	$('.slider-nav').slick(filterObj.sliderNav());
+
+	$('.burger').click(function () {
+		mbMenuHandler();
 	});
-	$('.slider-nav').slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		speed: 500,
-		asNavFor: '.slider-for',
-		dots: true,
-		arrows: false,
-		//infinite: true,
-		// centerMode: true,
-		focusOnSelect: true,
+	$('.mobile-menu-container').click(function () {
+		mbMenuHandler();
+	});
+	//скролл по ссылке с атрибутом href
 
+	$('.delivery-1').on('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$('#delivery-1').toggleClass('active');
+		if ($('#delivery-2').hasClass('active')) {
+			$('#delivery-2').removeClass('active');
+		}
+	});
+	$('.delivery-2').on('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$('#delivery-2').toggleClass('active');
+		if ($('#delivery-1').hasClass('active')) {
+			$('#delivery-1').removeClass('active');
+		}
+	});
+	// Скролл по классу .scroll_to и атрибуту data-scroll у кнопки к примеру (data-scroll="куда скроллим" в элементе куда скроллим ставим id потом впишем в куда скроллим)
+	// $(".scroll_to").on("clcik", function(e) {
+	//     e.preventDefault();
+	//     var anchor = $(this);
+	//     $('html, body').stop().animate({
+	//         scrollTop: $("#" + anchor.data('scroll')).offset().top
+	//     }, 500);
+	//     return false;
+	// });
+
+	// Активация слайдера
+	$(".owl-carousel").owlCarousel({
+		loop: true,
+		items: 1,
+		dots: true
 	});
 
-    //скролл по ссылке с атрибутом href
+	// Кастомные кнопки управления слайдером
+	var owl = $('.owl-carousel');
+	owl.owlCarousel();
+	// Go to the next item
+	$('.customNextBtn').click(function () {
+		owl.trigger('next.owl.carousel', [700]);
+	});
+	// Go to the previous item
+	$('.customPrevBtn').click(function () {
+		// With optional speed parameter
+		// Parameters has to be in square bracket '[]'
+		owl.trigger('prev.owl.carousel', [700]);
+	});
 
 
-    // Скролл по классу .scroll_to и атрибуту data-scroll у кнопки к примеру (data-scroll="куда скроллим" в элементе куда скроллим ставим id потом впишем в куда скроллим)
-    // $(".scroll_to").on("clcik", function(e) {
-    //     e.preventDefault();
-    //     var anchor = $(this);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $("#" + anchor.data('scroll')).offset().top
-    //     }, 500);
-    //     return false;
-    // });
 
-     // Активация слайдера
-    $(".owl-carousel").owlCarousel({
-        loop: true,
-        items: 1,
-        dots: true
-    });
 
-    // Кастомные кнопки управления слайдером
-    var owl = $('.owl-carousel');
-    owl.owlCarousel();
-    // Go to the next item
-    $('.customNextBtn').click(function() {
-        owl.trigger('next.owl.carousel', [700]);
-    });
-    // Go to the previous item
-    $('.customPrevBtn').click(function() {
-        // With optional speed parameter
-        // Parameters has to be in square bracket '[]'
-        owl.trigger('prev.owl.carousel', [700]);
-    });
+	$('.sold').click(function (e) {
+		e.preventDefault();
+
+		filterObj.filter($(this));
+	})
+
+
+
 
 });
 
 
-$(window).resize(function() {
+$(window).resize(function () {
 
 });
 
-$(window).scroll(function() {
-    
+$(window).scroll(function () {
+
 });
 

@@ -78,8 +78,74 @@ p
 // 		position: absolute
 .hidden
 	display: none
+//.main
+//	&.active
+//		overflow-X: hidden
 // Модальное окно
+.burger
+	width: 40px
+	z-index: 100
+	float: left
+	margin-top: 7px
+	div
+		border-radius: 3px
+		height: 6px
+		background: #fff
+		margin-bottom: 5px
+.burger-container
+	position: fixed
+	display: none
+	z-index: 100
+	top: 0
+	width: 100%
+	background: rgba(40, 60, 79, 0.8)
+	padding: 10px
+	transition: .3s
+	&.active
+		background: rgba(40, 60, 79, 0.96)
+	.header_modal
+		display: block
+		float: right
+		.button
+			font-size: 14px
+			height: 40px
+			width: 170px
+			border-radius: 5px
+.mobile-menu-container
+	position: fixed
+	display: none
+	left: -100%
+	padding: 10px
+	top: 60px
+	z-index: 100000
+	transition: .3s
+	width: 100%
+	height: 100%
+	overflow: auto
+	background: rgba(40, 60, 79, 0.96)
+	.overflow
+		height: 100%
+	ul
+		padding-left: 10px
+		li
+			list-style-type: none
 
+			font-size: 18px
+			a
+				color: #fff
+				display: inline-block
+				padding-bottom: 10px
+				width: 50%
+				&:hover
+					color: #fff
+					text-decoration: none
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+
+	&.active
+		left: 0px
 .popup2
 	width: 100%
 	height: 100%
@@ -201,7 +267,7 @@ p
 					margin: 0 -10px
 					.item
 						img
-							margin: auto
+							//margin-left: 174px
 							border: 2px solid transparent
 							border-radius: 12px
 							transition: .3s
@@ -519,7 +585,7 @@ p
 	top: 25px
 	width: 35px
 	height: 36px
-	display: block
+	display: none
 	background: url('../img/modal_close.png') 0 0 no-repeat
 // конец модального
 
@@ -569,7 +635,7 @@ p
 // Header 
 .header
 	text-align: center
-	min-height: 700px
+	min-height: 750px
 	height: 100vh	
 	background: url(../img/header_bg.jpg) no-repeat 50% 50%
 	background-size: cover
@@ -641,13 +707,22 @@ p
 		transition: .2s
 		&:hover
 			color: $main_color
-	.delivery-container
-		display: none
-		opacity: 0
-		padding-top: 50px
-		left: -150px
-		top: 35px
-		position: absolute
+	&.delivery-link
+		&:hover
+			.delivery-container
+				display: block
+				opacity: 1
+	&.guarantees-link
+		&:hover
+			.delivery-container
+				display: block
+				opacity: 1
+.delivery-container
+	display: none
+	padding-top: 50px
+	left: -150px
+	top: 35px
+	position: absolute
 	.delivery
 		background: #fff
 		color: $main_txt_color2
@@ -733,16 +808,6 @@ p
 						&:last-child
 							margin-bottom: 0
 
-	&.delivery-link
-		&:hover
-			.delivery-container
-				display: block
-				opacity: 1
-	&.guarantees-link
-		&:hover
-			.delivery-container
-				display: block
-				opacity: 1
 .header_wrap
 	margin: auto
 	position: absolute

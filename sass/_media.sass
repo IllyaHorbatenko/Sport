@@ -3,11 +3,17 @@
 /*==========  Desktop First Method  ==========*/
 
 /* Large Devices, Wide Screens */
+@media only screen and (max-width : 1250px)
+	.dm-modal
+		&.table-size
+			width: 800px
 @media only screen and (max-width : 1200px)
 	/**/
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
+	br
+		display: none
 	.header_modal
 		margin-top: 20px
 	.intermediate
@@ -19,20 +25,271 @@
 			.modal_form_input_wrap
 				display: inline-block
 
+	.header-modal-wrap
+		margin-right: 0
+	.header_modal
+		margin-top: 0
+
+	.comments-section
+		.customNextBtn
+			z-index: 10
+			right: -15px
+		.customPrevBtn
+			z-index: 10
+			left: -15px
+		.owl-carousel
+			width: 100%
+
+	.contacts-section
+		.contact-item
+			.text-wrap
+				p
+					br
+						display: block
+	.advertising-container
+		h3
+			font-size: 28px
+			br
+				display: block
+
+	.header_wrap
+		.services-steps
+			.item
+				p
+					br
+						display: block
+	.dm-modal
+		&.table-size
+			.title-wrap
+				h3
+					font-size: 32px
+
+	.popup
+		&.modal-slider
+			.dm-modal
+				width: 530px
+				.slick-slider-container
+					display: block
+					margin: 0 0 60px
+				.content-about
+					display: block
+					width: 100%
+					.goods-title
+						text-align: center
+					form
+						input[type=submit]
+							margin: 0
+							width: 100%
+						.modal_form_input_wrap
+							width: 100%
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
-	.header_nav
+	.delivery-container
+		margin: 10px
+		padding: 0
+		margin-bottom: 100px
+		position: static
+		.delivery
+			&:before
+				display: none
+		.text
+			margin-bottom: 20px
+		&.active
+			display: block
+	.fixed-menu-container
+		display: none
+	.burger-container
+		display: block
+	.mobile-menu-container
+		display: block
+	.foter-menu
 		display: none
 	.header_logo
 		display: block
 	.header_modal
-		margin-top: 40px
+		margin-top: 0
 	nav[canvas]
-		display: block		
+		display: block
+	.header_wrap
+		.services-steps
+			.item
+				&.arrow1
+					&:after
+						transform: scale(0.7)
+				&.arrow2
+					&:after
+						transform: scale(0.7,-1)
+
+	.goods-section
+		.top-row
+			margin-bottom: 60px
+		.tabs-container
+			.tabs-wrap
+				.item
+					max-width: 500px
+					margin: auto
+					margin-bottom: 50px
+
+	.advertising-container
+		.decore-img
+			display: none
+
+	.contacts-section
+		.item
+			padding: 0
+		.contact-item
+			.text-wrap
+				margin-left: 0
+			&.address
+				.icon
+					transform: scale(0.5)
+			&.email
+				.icon
+					transform: scale(0.5)
+			&.phone
+				.icon
+					transform: scale(0.5)
+
+	.comments-section
+		.owl-carusel-wrap
+			width: 80%
+			margin: auto
+			display: block
+		.owl-carousel
+			.owl-item
+				.avatar-wrap
+					width: 110px
+				.text
+					padding-right: 0
+		.customNextBtn
+			right: -30px
+		.customPrevBtn
+			left: -30px
 /* Small Devices, Tablets */
+@media only screen and (max-width : 870px)
+
+	.popup
+		&.modal-slider
+			.dm-modal
+				padding: 80px 30px 60px
+				.close
+					display: block
+					transform: scale(0.8)
+	.dm-modal
+		&.table-size
+			width: 500px
+			max-width: inherit
+			padding: 60px 20px 20px
+			min-height: 0
+			.close
+				display: block
+				transform: scale(0.8)
+			.title-wrap
+				margin-bottom: 20px
+				h3
+					font-size:  25px
+			.content-size
+				.size-table
+					overflow-x: auto
+					table
+						width: 700px
+				.head
+					border: none
+					text-align: left
+					padding-left: 0
+					.title
+						font-weight: 900
+						margin-bottom: 20px
+						float: none
+					.tabs-items-wrap
+						float: none
 @media only screen and (max-width : 768px)
-	
+	.header
+		padding: 65px 0 50px
+		height: auto
+	.header_wrap
+		position: static
+		.header-title
+			margin-bottom: 60px
+		.services-steps
+			margin-bottom: 25px
+			.item
+				margin-bottom: 35px
+				&.arrow1,
+				&.arrow2
+					&:after
+						right: -190px
+						left: 0
+						top: 130px
+						margin: auto
+						transform: scale(1) rotate(90deg)
+
+	.our_advantages
+		.our_advantages_item
+			margin-bottom: 50px
+			p
+				br
+					display: block
+	.contacts-section
+		.contact-item
+			padding-left: 20px
+			margin-bottom: 40px
+			.text-wrap
+				p
+					br
+						display: none
+			&.address,
+			&.email,
+			&.phone
+				.icon
+					margin-right: 15px
+					transform: scale(1)
+	.goods-section
+		h2
+			font-size: 34px
+		.top-row
+			margin: 0 0 30px
+		.title-wrap
+			float: none
+			text-align: center
+			margin: 0 0 30px
+		.tabs-items-wrap
+			float: none
+			text-align: center
+			padding: 0
+			.tabs-item
+				font-size: 25px
+	.advertising-container
+		padding: 0 15px
+
+	.comments-section
+		.owl-carousel
+			.owl-item
+				.item
+					display: block
+				.avatar-wrap
+					width: 130px
+					margin: 0 auto 20px
+
+	.intermediate
+		.intermediate_wrap
+			.modal_form_input_wrap
+				display: block
+			form
+				.intermediate_item
+					display: block
+					width: 100%
+					margin: 0 0 40px
+				input[type=submit]
+					width: 100%
+					margin: 0
+
+	.delivery-container
+		.delivery
+			width: 100%
+			.img-wrap
+				margin-bottom: 20px
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -59,11 +316,46 @@
 			font-size: 30px
 			margin-top: 40px
 	.header_modal
-		margin-top: 40px
+		margin-top: 0
 	[off-canvas*=left]
 		width: 255px
 
 /* Extra Small Devices, Phones */
+@media only screen and (max-width : 570px)
+
+	.dm-modal
+		&.table-size
+			min-width: 100%
+			width: 0
+			.title-wrap
+				p
+					line-height: 1.6
+			.content-size
+				.head
+					.tabs-items-wrap
+						a
+							font-size: 16px
+
+	.popup
+		&.modal-slider
+			.dm-modal
+				width: 375px
+				.content-about
+					.goods-title
+						font-size: 22px
+					.description
+						.name,
+						.value
+							font-size: 14px
+						.name-value
+							padding: 20px 0
+				.slick-slider-container
+					width: 100%
+					.slider-nav
+						display: none
+			.slick-slide
+				img
+					width: 100%
 @media only screen and (max-width : 520px)
 	/**/
 		
@@ -72,6 +364,16 @@
 	.dm-modal
 		input[type=submit]
 			width: 100%
+	.header_wrap
+		.header-title
+			h1
+				font-size: 35px
+				margin-bottom: 20px
+				line-height: 1.4
+			p
+				font-size: 22px
+
+
 @media only screen and (max-width : 480px)
 	/**/
 
@@ -87,6 +389,29 @@
 				font-size: 20px
 
 /* Custom, iPhone Retina */
+@media only screen and (max-width : 410px)
+	.popup
+		&.modal-slider
+			.dm-modal
+				width: 300px
+				.content-about
+					.goods-title
+						font-size: 22px
+					.description
+						margin-bottom: 20px
+						.price
+							font-size: 25px
+						.name,
+						.value
+							text-align: right
+							font-size: 14px
+						.value
+							max-width: 130px
+@media only screen and (max-width : 380px)
+	.popup
+		&.modal-slider
+			.dm-modal
+				width: 280px
 @media only screen and (max-width : 320px)
 	/**/
 

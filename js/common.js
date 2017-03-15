@@ -61,7 +61,7 @@ function mbMenuHandler() {
 
 function AjaxFilter() {
 	//http://work.melfori.com/Stropy/ajax/goods.json
-	var link = "../ajax/config.json",
+	var link = "http://work.melfori.com/app/ajax/config.json",
 		title = $('#goods-title'),
 		srcBig = $('.slider-for'), // добавлять tmp
 		srcSmall = $('.slider-nav'), // добавлять tmp
@@ -150,10 +150,9 @@ function AjaxFilter() {
 						limit++;
 						if(limit === 1){
 							size.find('.slct').text(el);
-						}else{
-							size.find('.drop').append(sizeTmpDrop(el));
+							$("#select-form").val(el)
 						}
-
+						size.find('.drop').append(sizeTmpDrop(el));
 					})
 				}
 			});
@@ -215,6 +214,11 @@ $(document).ready(function () {
 			$('#delivery-1').removeClass('active');
 		}
 	});
+	
+	$('.goods-section .goods-image').click(function(){
+		$(this).siblings('.sold').trigger('click');
+	})
+	
 	// Скролл по классу .scroll_to и атрибуту data-scroll у кнопки к примеру (data-scroll="куда скроллим" в элементе куда скроллим ставим id потом впишем в куда скроллим)
 	// $(".scroll_to").on("clcik", function(e) {
 	//     e.preventDefault();

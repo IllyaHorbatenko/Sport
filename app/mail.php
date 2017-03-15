@@ -11,7 +11,7 @@ if ($_POST) {
         $json['form_type'] = $id_form;
     }
 
-   
+
      if (isset($_POST['form_name']) and $_POST['form_name'] != "") {
         $form_name = $_POST['form_name'];
         $message .= '
@@ -36,13 +36,13 @@ if ($_POST) {
     }
      if(isset($_POST["services"])) {
         $services = $_POST["services"];
-        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Select: ' . $services . '</div>';
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Размер: ' . $services . '</div>';
     } 
 
 
     $mailer = new PHPMailer();
     $subject = "Заявка с сайта Название сайта";
-    $to = 'orionpro79@gmail.com';
+    $to = 'mini_van@ukr.net';
  //   $mailer->IsSMTP();
     $mailer->Host = 'smtp.yandex.ru';
     $mailer->Port = 465;

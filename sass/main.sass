@@ -118,6 +118,10 @@ body textarea:required:valid
 			.goods-image
 				width: 100%
 				margin-bottom: 27px
+				cursor: pointer
+				transition: .3s
+				&:hover
+					transform: scale(1.02)
 			.about
 				padding: 0 10px
 				color: $main_txt_color2
@@ -373,15 +377,18 @@ body textarea:required:valid
 		&.address
 			.icon
 				background: url("../img/icn_Location.png") no-repeat 50% 50%
+				background-size: cover
 		&.phone
 			.icon
 				background: url("../img/icn_Phone.png") no-repeat 50% 50%
+				background-size: cover
 			.text-wrap
 				p
 					margin-bottom: 12px
 		&.email
 			.icon
 				background: url("../img/icn_Email.png") no-repeat 50% 50%
+				background-size: cover
 		.text-wrap
 			vertical-align: top
 			display: inline-block
@@ -420,7 +427,7 @@ body textarea:required:valid
 	.maps-container
 		#map
 			width: 100%
-			height: 240px
+			height: 320px
 	.foter-menu
 		padding: 20px 0
 

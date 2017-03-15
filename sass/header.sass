@@ -170,6 +170,8 @@ p
 		display: block
 		z-index: -1
 		opacity: 0
+		.close
+			display: block
 		.dm-modal
 			padding: 50px 30px 60px
 			width: 1065px
@@ -200,6 +202,8 @@ p
 							width: 70px
 							.slct
 								height: auto
+								position: relative
+								z-index: 10
 								text-align: right
 								font: 20px $font_RobotoRegular
 								background: transparent
@@ -226,6 +230,7 @@ p
 							font-family: $font_RobotoRegular
 							color: $main_color
 							float: right
+							font-weight: 900
 				form
 					text-align: center
 					.modal_form_input_wrap
@@ -439,7 +444,7 @@ p
 			height: 35px
 			display: none
 			position: absolute
-			right: -25px
+			right: -4px
 			top: 40px
 			padding-left: 10px
 			font: 15px/35px $font_MyriadPro_Regular
@@ -465,7 +470,7 @@ p
 			position: relative
 			background-image: url('../img/modal_error_triangle.png')
 		.modal_error_chest_img
-			top: -33px
+			top: -30px
 			left: 0				
 			height: 9px
 		.modal_error_triangle
@@ -499,6 +504,7 @@ p
 	
 	.success_mail
 		display: none
+		text-align: center
 		color: $main_color
 		font: 24px $font_MyriadPro_Bold
 		&.active
@@ -581,8 +587,8 @@ p
 				transform: rotate(180deg)
 .close
 	position: absolute
-	right: 25px
-	top: 25px
+	right: -47px
+	top: 0px
 	width: 35px
 	height: 36px
 	display: none
@@ -624,7 +630,7 @@ p
 		position: relative
 		background-image: url('../img/modal_error_triangle.png')
 	.modal_error_chest_img
-		top: -33px
+		top: -30px
 		left: 0				
 		height: 9px
 	.modal_error_triangle
@@ -779,34 +785,47 @@ p
 					top: calc(50% - 5px)
 					border-radius: 50%
 					background: $main_txt_color2
-	.delivery-container
-		&.guarantees
-			left: -756px
+	&.guarantees
+		left: -756px
+		&.bottom
+			top: -623px
 			.delivery
-				width: 1170px
-				padding: 50px 85px
 				&:before
-					left: 825px
-				.item
-					width: 49%
-					display: inline-block
-					vertical-align: top
-					font-size: 0
-					padding-right: 35px
-					h3
-						font-size: 30px
-						font-weight: 900
-						margin: 0
-						margin-bottom: 25px
-					.text
-						margin-bottom: 25px
-						b
-							font-size: 20px
-							margin-bottom: 20px
-						p
-							font-size: 16px
-						&:last-child
-							margin-bottom: 0
+					top: 100%
+					transform: rotate(180deg)
+		.delivery
+			width: 1170px
+			padding: 50px 85px
+			&:before
+				left: 825px
+			.item
+				width: 49%
+				display: inline-block
+				vertical-align: top
+				font-size: 0
+				padding-right: 35px
+				h3
+					font-size: 30px
+					font-weight: 900
+					margin: 0
+					margin-bottom: 25px
+				.text
+					margin-bottom: 25px
+					b
+						font-size: 20px
+						margin-bottom: 20px
+					p
+						font-size: 16px
+						margin-bottom: 22px
+					&:last-child
+						margin-bottom: 0
+	&.bottom
+		top: -446px
+		.delivery
+			&:before
+				top: 100%
+				transform: rotate(180deg)
+
 
 .header_wrap
 	margin: auto

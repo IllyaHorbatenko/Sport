@@ -3,6 +3,19 @@
 /*==========  Desktop First Method  ==========*/
 
 /* Large Devices, Wide Screens */
+@media only screen and (max-width : 1400px)
+	.delivery-container
+		left: -334px
+		.delivery
+			left: 362px
+			&:before
+				left: 360px
+		&.guarantees
+			left: -499px
+			.delivery
+				width: 900px
+				&:before
+					left: 555px
 @media only screen and (max-width : 1250px)
 	.dm-modal
 		&.table-size
@@ -321,6 +334,12 @@
 		width: 255px
 
 /* Extra Small Devices, Phones */
+@media only screen and (max-width : 650px)
+	.dm-modal
+		margin-top: 60px
+		.close
+			right: 0px
+			top: -43px
 @media only screen and (max-width : 570px)
 
 	.dm-modal

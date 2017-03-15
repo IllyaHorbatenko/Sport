@@ -80,7 +80,7 @@ $(document).ready(function() {
 
                 /* Находим наш скрытый инпут и передаем в него 
                 значение из переменной selectResult */
-                $(this).parent().parent().find('input').val(selectResult);
+                $('#select-form').val(selectResult);
 
                 /* Передаем значение переменной selectResult в ссылку которая 
                 открывает наш выпадающий список и удаляем активность */
@@ -115,6 +115,8 @@ $(document).ready(function() {
         // var title =  $(this).data('title'); // для изменения title в модалке
         $(".popup[data-modal=" + id + "]").toggle("fade", 200).find("form").css('display', 'block');
         $(".popup[data-modal=" + id + "] input[name=form_name]").val(txt);
+        $('.dm-modal .slick-slider-container').show();
+        $('.dm-modal .content-about').show();
         // $(".popup[data-modal="+id+"] h2").html(title); // прописать в ссылку data-title="нужный title"
     
 
@@ -247,6 +249,8 @@ $(document).ready(function() {
                         if (data['form_type'] == 'modal') {
                             $('.dm-modal form').hide();
                             $('.dm-modal .close').hide();
+                            $('.dm-modal .slick-slider-container').hide();
+                            $('.dm-modal .content-about').hide();
                             form.trigger('reset');
                             $('.dm-modal .success_mail').addClass('active'); //пишем что всё ок
                             setTimeout(function() {
